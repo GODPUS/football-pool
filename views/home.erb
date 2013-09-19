@@ -1,24 +1,19 @@
 <section id="add">
 	<form action="/users" method="post">
-		<textarea name="content" placeholder="Your user&hellip;"></textarea>
-		<input type="submit" value="Take Note!">
+		<textarea name="username" placeholder="Username"></textarea>
+		<textarea name="password" placeholder="Password"></textarea>
+		<input type="submit" value="Submit">
 	</form>
 </section>
 
+
 <% @users.each do |user| %>
-	<article <%= 'class="complete"' if user.complete %>>
 		<p>
-			<%=h user.content %>
+			<%=h user.username %>
 			<span><a href="/users/<%= user.id %>">[edit]</a></span>
 		</p>
 		<p class="links">
 			<a href="/users/<%= user.id %>/complete">&#8623;</a>
 		</p>
-		<ul>
-			<% user.weeks.each do |week| %>
-			<li><%= week.content %></li>
-			<% end %>
-		</ul>
-		<p class="meta">Created: <%= user.created_at %></p>
 	</article>
 <% end %>

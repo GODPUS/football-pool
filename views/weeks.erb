@@ -1,0 +1,15 @@
+<% @weeks.each do |week| %>
+	<h1>Week #<%= week.num %>
+	<% week.matchups.each do |matchup| %>
+	<ul>
+		<li>
+			<p>
+				<%= matchup.num %>.
+				<% matchup.teams.each do |team| %>
+					<%= team.name %>
+				<% end %>
+			</p>
+		</li>
+	</ul>
+	<% end %>
+<% end %>

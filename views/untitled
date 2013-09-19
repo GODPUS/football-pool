@@ -1,0 +1,7 @@
+<h1><%= @weeks.matchups.get(1).teams.get(1).name %></h1>
+<% @weeks.each do |week| %>
+	<h1>Week #<%= week.num %>
+	<% week.matchups.each do |matchup| %>
+		<p>Matchup # matchup.num</p>
+	<% end %>
+<% end %>

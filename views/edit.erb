@@ -1,8 +1,8 @@
 <% if @user %>
 	<form action="/users/<%= @user.id %>" method="post" id="edit">
 		<input type="hidden" name="_method" value="put">
-		<textarea name="content"><%=h @user.content %></textarea>
-		<input type="checkbox" name="complete" <%= "checked" if @user.complete %>>
+		<textarea name="username" placeholder="Username"><%= @user.username %></textarea>
+		<textarea name="password" placeholder="Password"><%= @user.password %></textarea>
 		<input type="submit">
 	</form>
 	<p><a href="/users/<%= @user.id %>/delete">Delete</a></p>
